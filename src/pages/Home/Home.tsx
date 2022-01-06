@@ -93,19 +93,22 @@ const Home = () => {
         setEditBookVisible(false);
     }
 
+    // On purge library cancel  
     const handleCancel = () => {
         setIsModalVisible(false);
     };
 
+    // On edit book cancel
     const handleEditBookCancel = () => {
         setEditBookVisible(false);
     }
 
+    // On delete book click
     const handleDeleteBook = (deleteIndex : number) => {
         deleteBook(deleteIndex);
         message.success('Record deleted successfully');
     }
-    
+
     const onAddClick = (): void => {
         navigate('/add');
     }

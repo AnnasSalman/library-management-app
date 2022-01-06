@@ -1,9 +1,9 @@
 import React from 'react';
 import './BooksByAuthorOrPublisher.scss'
-import {Table, Tag, Popover} from 'antd';
+import {Button, Table, Tag, Popover} from 'antd';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../state/reducers';
-import {useParams} from 'react-router-dom'
+import {useParams, useNavigate} from 'react-router-dom'
 
 import {IBook} from '../../types';
 
@@ -34,6 +34,11 @@ const getBooksByPublisherOrAuthorData = (type: 'publisher' | 'author', books: IB
 const BooksByAuthorOrPublisher = () => {
     const books = useSelector((state: RootState) => state.books);
     const {sortType} = useParams();
+    const navigate = useNavigate();
+
+    const handleGoBack = () => {
+        navigate(-1);
+    }
 
     const columns = [
         {
@@ -72,6 +77,9 @@ const BooksByAuthorOrPublisher = () => {
 
     return (
         <div className="books-by-publisher-or-author-container">
+            <Button type="text" className="btn-go-back" onClick={handleGoBack}>
+                GO BACK
+            </Button>
             <Table 
                 dataSource={getBooksByPublisherOrAuthorData(sortType === 'author' ? 'author' : 'publisher', books)} 
                 columns={columns}
