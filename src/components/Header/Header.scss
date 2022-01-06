@@ -1,0 +1,9 @@
+@use '../../styles/global';
+
+.header{
+    background-color: global.$primary-color;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+}

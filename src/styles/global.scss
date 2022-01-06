@@ -1,0 +1,17 @@
+$primary-color: #3b3b61;
+
+.ant-table-thead > tr > th{
+    background-color: $primary-color;
+    color: white;
+    font-weight: bold;
+} 
+
+.ant-btn-primary{
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+    background-color: #4c4c85;
+    border-color: #4c4c85;
+}
